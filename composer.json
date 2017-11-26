@@ -1,29 +1,61 @@
 {
-    "name": "laravel/admin",
-    "description": "Simply manage different type of user by one admin",
-    "type": "library",
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
     "license": "MIT",
+    "type": "project",
     "require": {
-        "laravelcollective/html": "^5.4.0"
+        "php": ">=5.6.4",
+        "barryvdh/laravel-debugbar": "2.4",
+        "barryvdh/laravel-snappy": "^0.4.0",
+        "intervention/image": "^2.4",
+        "laravel/framework": "5.4.*",
+        "laravel/passport": "^3.0",
+        "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.4.0",
+        "maatwebsite/excel": "^2.1",
+        "yajra/laravel-datatables-buttons": "^3.0",
+        "yajra/laravel-datatables-html": "^3.0",
+        "yajra/laravel-datatables-oracle": "^8.0"
     },
-    "require": {
-        
-        "php": ">=5.6.0",
-        
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.7"
     },
-    "autoload":{
-        
-        "psr-4":{
-            "LaravelAdmin\\":"src/Admin"
-        },
-        "files": []
-     
-    },
-    "authors": [
-        {
-            "name": "hitesh",
-            "email": "hitesh@singsys.com"
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "LaravelAdmin\\":"packages/laravelAdmin/src"
         }
-    ],
-    "minimum-stability":"dev",
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"            
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
 }

@@ -1,0 +1,6 @@
+.bootstrap-select .dropdown-toggle {
+    padding:6px 0px;
+}
+.form-line .bootstrap-select{
+	border-bottom: initial !important;
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/t_laravel/app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/nv.d3.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">/var/www/html/t_laravel/app</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Exceptions/Handler.php.html#9">Handler</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#8">RedirectIfAuthenticated</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#8">AuthenticatesUsers</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#8">RouteServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/EventServiceProvider.php.html#8">EventServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/BroadcastServiceProvider.php.html#8">BroadcastServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AuthServiceProvider.php.html#9">AuthServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#7">AppServiceProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Role.php.html#7">Role</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/ResumableFileUpload.php.html#8">ResumableFileUpload</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Permission.php.html#8">Permission</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#7">FilesUploader</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/Authorize.php.html#8">Authorize</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/DashboardController.php.html#8">DashboardController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/HomeController.php.html#7">HomeController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Controller.php.html#10">Controller</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/ResetPasswordController.php.html#8">ResetPasswordController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/RegisterController.php.html#10">RegisterController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/ForgotPasswordController.php.html#8">ForgotPasswordController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/LoginController.php.html#9">LoginController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/SettingController.php.html#9">SettingController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#10">RoleController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/PermissionController.php.html#9">PermissionController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/FileController.php.html#10">FileController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#6">BulkDataQuery</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#8">AuthenticatesUsers</a></td><td class="text-right">650</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#7">FilesUploader</a></td><td class="text-right">506</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#6">BulkDataQuery</a></td><td class="text-right">506</td></tr>
+       <tr><td><a href="Lib/ResumableFileUpload.php.html#8">ResumableFileUpload</a></td><td class="text-right">420</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#10">RoleController</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/PermissionController.php.html#9">PermissionController</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Http/Controllers/LoginController.php.html#9">LoginController</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/SettingController.php.html#9">SettingController</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#9">Handler</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#7">AppServiceProvider</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Controller.php.html#10">Controller</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#8">RedirectIfAuthenticated</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Exceptions/Handler.php.html#33"><abbr title="Handler::report">report</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/BroadcastServiceProvider.php.html#15"><abbr title="BroadcastServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#19"><abbr title="AuthenticatesUsers::validateLogin">validateLogin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#66"><abbr title="RouteServiceProvider::mapApiRoutes">mapApiRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#52"><abbr title="RouteServiceProvider::mapWebRoutes">mapWebRoutes</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#36"><abbr title="RouteServiceProvider::map">map</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/RouteServiceProvider.php.html#24"><abbr title="RouteServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/EventServiceProvider.php.html#26"><abbr title="EventServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AuthServiceProvider.php.html#25"><abbr title="AuthServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#48"><abbr title="AuthenticatesUsers::user">user</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#26"><abbr title="AppServiceProvider::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#14"><abbr title="AppServiceProvider::boot">boot</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Role.php.html#13"><abbr title="Role::permissions">permissions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/ResumableFileUpload.php.html#89"><abbr title="ResumableFileUpload::doUpload">doUpload</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/ResumableFileUpload.php.html#26"><abbr title="ResumableFileUpload::createFileFromChunks">createFileFromChunks</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/ResumableFileUpload.php.html#13"><abbr title="ResumableFileUpload::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#33"><abbr title="AuthenticatesUsers::attemptLogin">attemptLogin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#68"><abbr title="AuthenticatesUsers::hasUnverifieldLabel">hasUnverifieldLabel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#105"><abbr title="FilesUploader::getFileName">getFileName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#233"><abbr title="AuthenticatesUsers::redirectPath">redirectPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#126"><abbr title="BulkDataQuery::bulkInsertUpdate">bulkInsertUpdate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#95"><abbr title="BulkDataQuery::insertUpdateQuery">insertUpdateQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#72"><abbr title="BulkDataQuery::insertIgnoreQuery">insertIgnoreQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#60"><abbr title="BulkDataQuery::isAQuery">isAQuery</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#107"><abbr title="BulkDataQuery::anonymous function">anonymous function</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#14"><abbr title="BulkDataQuery::buildValueStatement">buildValueStatement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#223"><abbr title="AuthenticatesUsers::guard">guard</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#97"><abbr title="AuthenticatesUsers::sendUnverifieldLoginResponse">sendUnverifieldLoginResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#209"><abbr title="AuthenticatesUsers::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#198"><abbr title="AuthenticatesUsers::username">username</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#179"><abbr title="AuthenticatesUsers::sendFailedLoginResponse">sendFailedLoginResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#168"><abbr title="AuthenticatesUsers::authenticated">authenticated</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#146"><abbr title="AuthenticatesUsers::getLoginLable">getLoginLable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#130"><abbr title="AuthenticatesUsers::sendLoginResponse">sendLoginResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#117"><abbr title="AuthenticatesUsers::credentials">credentials</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Models/Permission.php.html#16"><abbr title="Permission::roles">roles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#81"><abbr title="FilesUploader::rrmdir">rrmdir</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#45"><abbr title="Handler::render">render</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/PermissionController.php.html#56"><abbr title="PermissionController::roles">roles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#102"><abbr title="RoleController::roles">roles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#74"><abbr title="RoleController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#59"><abbr title="RoleController::assignPermission">assignPermission</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#43"><abbr title="RoleController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#31"><abbr title="RoleController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#17"><abbr title="RoleController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/PermissionController.php.html#50"><abbr title="PermissionController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/SettingController.php.html#28"><abbr title="SettingController::store">store</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/PermissionController.php.html#20"><abbr title="PermissionController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/PermissionController.php.html#13"><abbr title="PermissionController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/FileController.php.html#31"><abbr title="FileController::uploader">uploader</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/FileController.php.html#20"><abbr title="FileController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/DashboardController.php.html#17"><abbr title="DashboardController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#57"><abbr title="Handler::unauthenticated">unauthenticated</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/SettingController.php.html#17"><abbr title="SettingController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/LoginController.php.html#19"><abbr title="LoginController::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#57"><abbr title="FilesUploader::isWritablePath">isWritablePath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/Authorize.php.html#20"><abbr title="Authorize::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#47"><abbr title="FilesUploader::getInternalPath">getInternalPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#42"><abbr title="FilesUploader::getFullUrl">getFullUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#33"><abbr title="FilesUploader::getDestinationPath">getDestinationPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#20"><abbr title="FilesUploader::getTempPath">getTempPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#12"><abbr title="FilesUploader::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#18"><abbr title="RedirectIfAuthenticated::handle">handle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/HomeController.php.html#24"><abbr title="HomeController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/LoginController.php.html#36"><abbr title="LoginController::loginAction">loginAction</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/HomeController.php.html#14"><abbr title="HomeController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Controller.php.html#26"><abbr title="Controller::sendApiResponse">sendApiResponse</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/ResetPasswordController.php.html#35"><abbr title="ResetPasswordController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/RegisterController.php.html#63"><abbr title="RegisterController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/RegisterController.php.html#48"><abbr title="RegisterController::validator">validator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/RegisterController.php.html#37"><abbr title="RegisterController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Http/Controllers/Auth/ForgotPasswordController.php.html#28"><abbr title="ForgotPasswordController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#166"><abbr title="BulkDataQuery::bulkInsertIgnore">bulkInsertIgnore</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Lib/ResumableFileUpload.php.html#89"><abbr title="ResumableFileUpload::doUpload">doUpload</abbr></a></td><td class="text-right">156</td></tr>
+       <tr><td><a href="Lib/ResumableFileUpload.php.html#26"><abbr title="ResumableFileUpload::createFileFromChunks">createFileFromChunks</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#68"><abbr title="AuthenticatesUsers::hasUnverifieldLabel">hasUnverifieldLabel</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#57"><abbr title="FilesUploader::isWritablePath">isWritablePath</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#81"><abbr title="FilesUploader::rrmdir">rrmdir</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#166"><abbr title="BulkDataQuery::bulkInsertIgnore">bulkInsertIgnore</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/PermissionController.php.html#20"><abbr title="PermissionController::update">update</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#126"><abbr title="BulkDataQuery::bulkInsertUpdate">bulkInsertUpdate</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#74"><abbr title="RoleController::update">update</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/SettingController.php.html#28"><abbr title="SettingController::store">store</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#14"><abbr title="BulkDataQuery::buildValueStatement">buildValueStatement</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Http/Controllers/LoginController.php.html#36"><abbr title="LoginController::loginAction">loginAction</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#95"><abbr title="BulkDataQuery::insertUpdateQuery">insertUpdateQuery</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Lib/BulkDataQuery.php.html#72"><abbr title="BulkDataQuery::insertIgnoreQuery">insertIgnoreQuery</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#146"><abbr title="AuthenticatesUsers::getLoginLable">getLoginLable</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#105"><abbr title="FilesUploader::getFileName">getFileName</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/PermissionController.php.html#56"><abbr title="PermissionController::roles">roles</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#102"><abbr title="RoleController::roles">roles</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#33"><abbr title="FilesUploader::getDestinationPath">getDestinationPath</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Lib/FilesUploader.php.html#20"><abbr title="FilesUploader::getTempPath">getTempPath</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Providers/AppServiceProvider.php.html#14"><abbr title="AppServiceProvider::boot">boot</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#48"><abbr title="AuthenticatesUsers::user">user</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Middleware/RedirectIfAuthenticated.php.html#18"><abbr title="RedirectIfAuthenticated::handle">handle</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#97"><abbr title="AuthenticatesUsers::sendUnverifieldLoginResponse">sendUnverifieldLoginResponse</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#130"><abbr title="AuthenticatesUsers::sendLoginResponse">sendLoginResponse</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Controller.php.html#26"><abbr title="Controller::sendApiResponse">sendApiResponse</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/AuthenticatesUsers.php.html#179"><abbr title="AuthenticatesUsers::sendFailedLoginResponse">sendFailedLoginResponse</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/LoginController.php.html#19"><abbr title="LoginController::login">login</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Http/Controllers/Admin/RoleController.php.html#43"><abbr title="RoleController::store">store</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Exceptions/Handler.php.html#57"><abbr title="Handler::unauthenticated">unauthenticated</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 4.0.5</a> using <a href="https://secure.php.net/" target="_top">PHP 7.0.22-0ubuntu0.16.04.1</a> with <a href="https://xdebug.org/">Xdebug 2.4.0</a> and <a href="https://phpunit.de/">PHPUnit 5.7.12</a> at Sat Oct 7 10:34:50 IST 2017.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/holder.min.js" type="text/javascript"></script>
+  <script src="js/d3.min.js" type="text/javascript"></script>
+  <script src="js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([25,0,0,0,0,0,0,0,0,0,0,6], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([73,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[100,0,"<a href=\"Http\/Kernel.php.html#7\">Kernel<\/a>"],[0,4,"<a href=\"Exceptions\/Handler.php.html#9\">Handler<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Admin\/DashboardController.php.html#8\">DashboardController<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Admin\/FileController.php.html#10\">FileController<\/a>"],[0,10,"<a href=\"Http\/Controllers\/Admin\/PermissionController.php.html#9\">PermissionController<\/a>"],[0,13,"<a href=\"Http\/Controllers\/Admin\/RoleController.php.html#10\">RoleController<\/a>"],[0,5,"<a href=\"Http\/Controllers\/Admin\/SettingController.php.html#9\">SettingController<\/a>"],[0,6,"<a href=\"Http\/Controllers\/LoginController.php.html#9\">LoginController<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/ForgotPasswordController.php.html#8\">ForgotPasswordController<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Auth\/RegisterController.php.html#10\">RegisterController<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/ResetPasswordController.php.html#8\">ResetPasswordController<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Controller.php.html#10\">Controller<\/a>"],[0,2,"<a href=\"Http\/Controllers\/HomeController.php.html#7\">HomeController<\/a>"],[0,1,"<a href=\"Http\/Middleware\/Authorize.php.html#8\">Authorize<\/a>"],[100,0,"<a href=\"Http\/Middleware\/EncryptCookies.php.html#7\">EncryptCookies<\/a>"],[0,2,"<a href=\"Http\/Middleware\/RedirectIfAuthenticated.php.html#8\">RedirectIfAuthenticated<\/a>"],[100,0,"<a href=\"Http\/Middleware\/TrimStrings.php.html#7\">TrimStrings<\/a>"],[100,0,"<a href=\"Http\/Middleware\/VerifyCsrfToken.php.html#7\">VerifyCsrfToken<\/a>"],[0,22,"<a href=\"Lib\/FilesUploader.php.html#7\">FilesUploader<\/a>"],[0,1,"<a href=\"Models\/Permission.php.html#8\">Permission<\/a>"],[0,20,"<a href=\"Lib\/ResumableFileUpload.php.html#8\">ResumableFileUpload<\/a>"],[0,1,"<a href=\"Models\/Role.php.html#7\">Role<\/a>"],[100,0,"<a href=\"Models\/Setting.php.html#7\">Setting<\/a>"],[0,3,"<a href=\"Providers\/AppServiceProvider.php.html#7\">AppServiceProvider<\/a>"],[0,1,"<a href=\"Providers\/AuthServiceProvider.php.html#9\">AuthServiceProvider<\/a>"],[0,1,"<a href=\"Providers\/BroadcastServiceProvider.php.html#8\">BroadcastServiceProvider<\/a>"],[0,1,"<a href=\"Providers\/EventServiceProvider.php.html#8\">EventServiceProvider<\/a>"],[0,4,"<a href=\"Providers\/RouteServiceProvider.php.html#8\">RouteServiceProvider<\/a>"],[100,0,"<a href=\"User.php.html#9\">User<\/a>"],[0,25,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#8\">AuthenticatesUsers<\/a>"],[0,22,"<a href=\"Lib\/BulkDataQuery.php.html#6\">BulkDataQuery<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Exceptions\/Handler.php.html#33\">Handler::report<\/a>"],[0,1,"<a href=\"Exceptions\/Handler.php.html#45\">Handler::render<\/a>"],[0,2,"<a href=\"Exceptions\/Handler.php.html#57\">Handler::unauthenticated<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Admin\/DashboardController.php.html#17\">DashboardController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Admin\/FileController.php.html#20\">FileController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Admin\/FileController.php.html#31\">FileController::uploader<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Admin\/PermissionController.php.html#13\">PermissionController::index<\/a>"],[0,5,"<a href=\"Http\/Controllers\/Admin\/PermissionController.php.html#20\">PermissionController::update<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Admin\/PermissionController.php.html#50\">PermissionController::destroy<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Admin\/PermissionController.php.html#56\">PermissionController::roles<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Admin\/RoleController.php.html#17\">RoleController::index<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Admin\/RoleController.php.html#31\">RoleController::create<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Admin\/RoleController.php.html#43\">RoleController::store<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Admin\/RoleController.php.html#59\">RoleController::assignPermission<\/a>"],[0,5,"<a href=\"Http\/Controllers\/Admin\/RoleController.php.html#74\">RoleController::update<\/a>"],[0,3,"<a href=\"Http\/Controllers\/Admin\/RoleController.php.html#102\">RoleController::roles<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Admin\/SettingController.php.html#17\">SettingController::index<\/a>"],[0,4,"<a href=\"Http\/Controllers\/Admin\/SettingController.php.html#28\">SettingController::store<\/a>"],[0,2,"<a href=\"Http\/Controllers\/LoginController.php.html#19\">LoginController::login<\/a>"],[0,4,"<a href=\"Http\/Controllers\/LoginController.php.html#36\">LoginController::loginAction<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/ForgotPasswordController.php.html#28\">ForgotPasswordController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/RegisterController.php.html#37\">RegisterController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/RegisterController.php.html#48\">RegisterController::validator<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/RegisterController.php.html#63\">RegisterController::create<\/a>"],[0,1,"<a href=\"Http\/Controllers\/Auth\/ResetPasswordController.php.html#35\">ResetPasswordController::__construct<\/a>"],[0,2,"<a href=\"Http\/Controllers\/Controller.php.html#26\">Controller::sendApiResponse<\/a>"],[0,1,"<a href=\"Http\/Controllers\/HomeController.php.html#14\">HomeController::__construct<\/a>"],[0,1,"<a href=\"Http\/Controllers\/HomeController.php.html#24\">HomeController::index<\/a>"],[0,1,"<a href=\"Http\/Middleware\/Authorize.php.html#20\">Authorize::handle<\/a>"],[0,2,"<a href=\"Http\/Middleware\/RedirectIfAuthenticated.php.html#18\">RedirectIfAuthenticated::handle<\/a>"],[0,1,"<a href=\"Lib\/FilesUploader.php.html#12\">FilesUploader::__construct<\/a>"],[0,2,"<a href=\"Lib\/FilesUploader.php.html#20\">FilesUploader::getTempPath<\/a>"],[0,2,"<a href=\"Lib\/FilesUploader.php.html#33\">FilesUploader::getDestinationPath<\/a>"],[0,1,"<a href=\"Lib\/FilesUploader.php.html#42\">FilesUploader::getFullUrl<\/a>"],[0,1,"<a href=\"Lib\/FilesUploader.php.html#47\">FilesUploader::getInternalPath<\/a>"],[0,6,"<a href=\"Lib\/FilesUploader.php.html#57\">FilesUploader::isWritablePath<\/a>"],[0,6,"<a href=\"Lib\/FilesUploader.php.html#81\">FilesUploader::rrmdir<\/a>"],[0,3,"<a href=\"Lib\/FilesUploader.php.html#105\">FilesUploader::getFileName<\/a>"],[0,1,"<a href=\"Models\/Permission.php.html#16\">Permission::roles<\/a>"],[0,1,"<a href=\"Lib\/ResumableFileUpload.php.html#13\">ResumableFileUpload::__construct<\/a>"],[0,7,"<a href=\"Lib\/ResumableFileUpload.php.html#26\">ResumableFileUpload::createFileFromChunks<\/a>"],[0,12,"<a href=\"Lib\/ResumableFileUpload.php.html#89\">ResumableFileUpload::doUpload<\/a>"],[0,1,"<a href=\"Models\/Role.php.html#13\">Role::permissions<\/a>"],[0,2,"<a href=\"Providers\/AppServiceProvider.php.html#14\">AppServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/AppServiceProvider.php.html#26\">AppServiceProvider::register<\/a>"],[0,1,"<a href=\"Providers\/AuthServiceProvider.php.html#25\">AuthServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/BroadcastServiceProvider.php.html#15\">BroadcastServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/EventServiceProvider.php.html#26\">EventServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/RouteServiceProvider.php.html#24\">RouteServiceProvider::boot<\/a>"],[0,1,"<a href=\"Providers\/RouteServiceProvider.php.html#36\">RouteServiceProvider::map<\/a>"],[0,1,"<a href=\"Providers\/RouteServiceProvider.php.html#52\">RouteServiceProvider::mapWebRoutes<\/a>"],[0,1,"<a href=\"Providers\/RouteServiceProvider.php.html#66\">RouteServiceProvider::mapApiRoutes<\/a>"],[0,1,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#19\">AuthenticatesUsers::validateLogin<\/a>"],[0,1,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#33\">AuthenticatesUsers::attemptLogin<\/a>"],[0,2,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#48\">AuthenticatesUsers::user<\/a>"],[0,6,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#68\">AuthenticatesUsers::hasUnverifieldLabel<\/a>"],[0,2,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#97\">AuthenticatesUsers::sendUnverifieldLoginResponse<\/a>"],[0,1,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#117\">AuthenticatesUsers::credentials<\/a>"],[0,2,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#130\">AuthenticatesUsers::sendLoginResponse<\/a>"],[0,3,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#146\">AuthenticatesUsers::getLoginLable<\/a>"],[0,1,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#168\">AuthenticatesUsers::authenticated<\/a>"],[0,2,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#179\">AuthenticatesUsers::sendFailedLoginResponse<\/a>"],[0,1,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#198\">AuthenticatesUsers::username<\/a>"],[0,1,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#209\">AuthenticatesUsers::logout<\/a>"],[0,1,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#223\">AuthenticatesUsers::guard<\/a>"],[0,1,"<a href=\"Http\/Controllers\/AuthenticatesUsers.php.html#233\">AuthenticatesUsers::redirectPath<\/a>"],[0,4,"<a href=\"Lib\/BulkDataQuery.php.html#14\">BulkDataQuery::buildValueStatement<\/a>"],[0,1,"<a href=\"Lib\/BulkDataQuery.php.html#107\">BulkDataQuery::anonymous function<\/a>"],[0,1,"<a href=\"Lib\/BulkDataQuery.php.html#60\">BulkDataQuery::isAQuery<\/a>"],[0,3,"<a href=\"Lib\/BulkDataQuery.php.html#72\">BulkDataQuery::insertIgnoreQuery<\/a>"],[0,3,"<a href=\"Lib\/BulkDataQuery.php.html#95\">BulkDataQuery::insertUpdateQuery<\/a>"],[0,5,"<a href=\"Lib\/BulkDataQuery.php.html#126\">BulkDataQuery::bulkInsertUpdate<\/a>"],[0,5,"<a href=\"Lib\/BulkDataQuery.php.html#166\">BulkDataQuery::bulkInsertIgnore<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

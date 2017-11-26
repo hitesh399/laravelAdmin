@@ -1,0 +1,77 @@
+
+
+
+$('#cropperDiv').removeClass('hide');
+          $('#dropzoneDiv').addClass('hide');
+
+
+            
+          var img = new Image();
+          img.id ='cropImage1';
+          img.onload = function() {
+            
+            $('.cropper-panel').append(img);
+
+
+            $(this).wrap('<div class="imageBox">').wrap('<div class="inner"/>');
+
+            $('.cropper-panel img#cropImage1').cropper({
+              movable: true,
+              zoomable: true,
+              rotatable: false,
+              scalable: false,
+              responsive:true,
+              aspectRatio: 1,
+              minCropBoxWidth:20,
+              minCropBoxHeight:20,
+              viewMode:3,
+              ready: function(){
+
+                //$(this).cropper('setData',{"width":20, "height":20}); 
+
+              },
+              crop: function (data) {
+                  tData =cropImgData = data; // save returned data to cropImgData.
+                  console.log(cropImgData);
+
+                  addCropData('20x20',{x:cropImgData.x,y:cropImgData.y,width:cropImgData.width,height:cropImgData.height,rotate:0});
+
+
+              }
+
+            });
+          };
+          img.src = e.target.result;
+
+
+          var img1 = new Image();
+          img1.id ='cropImage2';
+          img1.onload = function() {
+            
+            $('.cropper-panel').append(img1);
+            $(this).wrap('<div class="imageBox">').wrap('<div class="inner"/>');
+
+            $('.cropper-panel img#cropImage2').cropper({
+              movable: true,
+              aspectRatio:"16/9",
+              zoomable: true,
+              rotatable: false,
+              scalable: false,
+              responsive:true,
+              minCropBoxWidth:90,
+              minCropBoxHeight:30,
+              viewMode:3,
+              crop: function (data) {
+                  cropImgData = data; // save returned data to cropImgData.
+                  console.log(cropImgData);   //cropImgData is the returned data from cropper
+
+                  addCropData('90X30',{x:cropImgData.x,y:cropImgData.y,width:cropImgData.width,height:cropImgData.height,rotate:0});
+              },
+              ready: function(){
+
+                //$(this).cropper('setData',{"width":90, "height":30}); 
+
+              },
+            });
+          };
+          img1.src = e.target.result;
