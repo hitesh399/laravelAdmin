@@ -70,7 +70,7 @@ Artisan::command('admin:Registerpermissions',function(){
 	
 	if(count($permission_attr)){
 		
-		$data = \App\Models\Permission::bulkInsertUpdate($permission_attr,['prefix']);
+		$data = \App\Models\Permission::batchInsertUpdate($permission_attr,['prefix']);
 		$this->comment('Permissions has been registered successfully. Inserted: '.$data['inserted'].', Updated: '.$data['updated'].', Total: '.$data['total']);
 	}else{
 

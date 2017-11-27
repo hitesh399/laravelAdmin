@@ -57,7 +57,7 @@ Trait BulkDataQuery
 	* @return Bool
 	**/
 
-	function isAQuery($str)
+	private function isAQuery($str)
 	{
 		return preg_match("/^(\s*?)select\s*?.*?\s*?from([\s]|[^;]|(['\"].*;.*['\"]))*?;\s*?$/i", $str);
 	}
@@ -69,7 +69,8 @@ Trait BulkDataQuery
 	 * @return String
 	 **/
 
-	function insertIgnoreQuery(array $data,$table){
+	public function insertIgnoreQuery(array $data,$table)
+	{
 
 		if(!isset($data[0]) || !is_array($data[0])){
 			return false;
@@ -92,7 +93,8 @@ Trait BulkDataQuery
 	 * @return String
 	 **/
 
-	function insertUpdateQuery(array $data,$table, array $updateColumn){
+	public function insertUpdateQuery(array $data,$table, array $update_columns)
+	{
 
 		if(!isset($data[0]) || !is_array($data[0])){
 			return false;
@@ -103,16 +105,16 @@ Trait BulkDataQuery
 
 	    $values = $this->buildValueStatement($data);
 	    
-	    $updateColumns  =[];
-        array_walk($updateColumn, function($v) use(&$updateColumns){
+	    $update_columnss  =[];
+        array_walk($update_columns, function($v) use(&$update_columnss){
 
-        	$updateColumns[] = '`'.$v.'`=  values(`'.$v.'`)';
+        	$update_columnss[] = '`'.$v.'`=  values(`'.$v.'`)';
         });
 
-        $updateColumnsStr = implode(',', $updateColumns);
+        $update_columnssStr = implode(',', $update_columnss);
 
 
-	    $query = "INSERT INTO `{$table}` ({$keys}) values {$values} ON DUPLICATE KEY UPDATE {$updateColumnsStr}";
+	    $query = "INSERT INTO `{$table}` ({$keys}) values {$values} ON DUPLICATE KEY UPDATE {$update_columnssStr}";
 	    return  $query;
 	}
 
@@ -123,37 +125,28 @@ Trait BulkDataQuery
 	 * @return Array
 	 **/
 
-	public static function bulkInsertUpdate(array $data,array $updateColumn,$size=10000)
+	public static function batchInsertUpdate(array $data,array $update_columns,$size=10000)
 	{	
-		$totalData = count($data);
-		if(!$totalData)
+		$data_count = count($data);
+
+		if(!$data_count)
 			return NULL;
 
-		$inst = new static;
+		$self = new static;
 
-		$tableName = $inst->getTable();
+		$table_name = $self->getTable();
 		
-		$nextId = $inst->getConnection()->select("SHOW TABLE STATUS LIKE '{$tableName}'");
-		$nextId = isset($nextId[0]->Auto_increment)?$nextId[0]->Auto_increment:1;
+		$next_id = $self->tableNextIncrement();
 
-		$chunkData = array_chunk($data, $size);
+		$chunk_data = array_chunk($data, $size);
 
-		foreach($chunkData as $rowData){
+		foreach($chunk_data as $row_data){
 
-			$query = $inst->insertUpdateQuery($rowData,$tableName,$updateColumn);
-			$inst->getConnection()->statement($query);			
+			$query = $self->insertUpdateQuery($row_data,$table_name,$update_columns);
+			$self->getConnection()->statement($query);			
 		}
 		
-		$newMaxId = $inst->max($inst->getKeyName());
-		$maxId = ($newMaxId+1);
-		$inst->getConnection()->statement('ALTER TABLE '.$tableName.' AUTO_INCREMENT='.$maxId);
-
-		$inserted = (($newMaxId-$nextId)+1);
-		$inserted = ($inserted > $totalData)?$totalData:$inserted;
-		$updated = ($totalData-$inserted);
-
-		return ['total'=>$totalData,'updated'=>$updated,'inserted'=>$inserted];
-
+		return $self->batchResponse($next_id,$data_count,false);
 	}
 
 	/**
@@ -163,36 +156,72 @@ Trait BulkDataQuery
 	 * @return Array
 	 **/
 
-	public static function bulkInsertIgnore(array $data,$size=10000)
+	public static function batchInsertIgnore(array $data,$size=10000)
 	{		
 
-		$totalData = count($data);
-		if(!$totalData)
+		$data_count = count($data);
+		if(!$data_count)
 			return NULL;
 
-		$inst = new static;
-		$tableName = $inst->getTable();
+		$self = new static;
+		$table_name = $self->getTable();
 
-		$nextId = $inst->getConnection()->select("SHOW TABLE STATUS LIKE '{$tableName}'");
-		$nextId = isset($nextId[0]->Auto_increment)?$nextId[0]->Auto_increment:1;
+		$next_id = $self->tableNextIncrement();
 
-		$chunkData = array_chunk($data, $size);
+		$chunk_data = array_chunk($data, $size);
 
-		foreach($chunkData as $rowData){
+		foreach($chunk_data as $row_data){
 
-			$query = $inst->insertIgnoreQuery($rowData,$tableName);
-			$inst->getConnection()->statement($query);			
-		}		
+			$query = $self->insertIgnoreQuery($row_data,$table_name);
+			$self->getConnection()->statement($query);			
+		}
 
-		$newMaxId = $inst->max($inst->getKeyName());
-		$maxId = ($newMaxId+1);
-		$inst->getConnection()->statement('ALTER TABLE '.$tableName.' AUTO_INCREMENT='.$maxId);
-
-		$inserted = (($newMaxId-$nextId)+1);
-		$inserted = ($inserted > $totalData)?$totalData:$inserted;
-		$ignored = ($totalData-$inserted);
-		return ['total'=>$totalData,'ignored'=>$ignored,'inserted'=>$inserted];
+		return $self->batchResponse($next_id,$data_count);		
 
 	}
-}	
 
+	/**
+	 * For getting Table Status
+	 * @return [Null|integer]
+	 */
+	private function tableNextIncrement()
+	{
+		$table_name = $this->getTable();
+		$table_status = $this->getConnection()->select("SHOW TABLE STATUS LIKE '{$table_name}'");
+		return $table_status[0]->Auto_increment;
+	}
+
+	/**
+	 * For repairing the Table max number.
+	 * @return   integer
+	 */
+	
+	private function repairPrimaryNumber()
+	{	
+		$max_id = $this->max($this->getKeyName());
+		$max_id = ($max_id+1);
+		$table_name = $this->getTable();
+		$this->getConnection()->statement('ALTER TABLE '.$table_name.' AUTO_INCREMENT='.$max_id);
+		return $max_id;
+	}
+
+	/**
+	 * Response the batch insert and update data.
+	 * @return   Array|TRUE
+	 */
+	
+	private function batchResponse($next_id,$data_count,$for_insert=true)
+	{
+		if($next_id !==null){
+
+			$new_max_id = $this->repairPrimaryNumber();
+			$inserted = ($new_max_id-$next_id);
+			$inserted = ($inserted > $data_count)?$data_count:$inserted;
+			$ignored = ($data_count-$inserted);
+			$iu_column = ($for_insert)?'ignored':'updated';
+			return ['total'=>$data_count,$iu_column=>$ignored,'inserted'=>$inserted];
+		}
+
+		return true;
+	}
+}

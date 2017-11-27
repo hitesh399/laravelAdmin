@@ -28,9 +28,9 @@ class AppServiceProvider extends ServiceProvider
          \Mail::alwaysReplyTo('mohit@singsys.com');
 
         
-        \Form::component('laMedia', 'la.la_image', ['name', 'value' => null,'setting','attributes' => []]);
+        // \Form::component('laMedia', 'la.la_image', ['name', 'value' => null,'setting','attributes' => []]);
 
-        \Form::component('laFile', 'la.la_file', ['name', 'value' => null,'setting', 'attributes' => [] ));
+        // \Form::component('laFile', 'la.la_file', ['name', 'value' => null,'setting', 'attributes' => [] ));
 
         Blade::directive('datetime', function ($expression) {           
 
