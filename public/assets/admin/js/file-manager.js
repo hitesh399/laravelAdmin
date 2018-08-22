@@ -96,7 +96,10 @@ function fileManager(requestData){
 	                    //$(this).cropper('setData',{"width":20, "height":20}); 
 
 	                  },
-	                  crop: function (cropImgData) {
+	                  crop: function (cropData) {
+	                  	console.log('cropImgData');
+	                  	//console.log(cropImgData);
+	                  		var cropImgData = cropData.detail;
 	                      _this.addCropData(wh,{x:cropImgData.x,y:cropImgData.y,width:cropImgData.width,height:cropImgData.height,rotate:0,thumb_width:_thumb.w,thumb_height:_thumb.h});
 	                  }
 
@@ -193,7 +196,7 @@ function fileManager(requestData){
 		  previewsContainer: "#previews",
 		  humbnailWidth: 40,
 		  thumbnailHeight: 40,
-		  maxFilesize:_this.maxFilesize,
+		  maxFilesize: _this.maxFilesize ? _this.maxFilesize : undefined,
 		  maxFiles:_this.maxFiles,
 		  
 		  init: function() {
@@ -211,7 +214,6 @@ function fileManager(requestData){
 		        $('#cropperDiv').addClass('hide');
 		        $('#dropzoneDiv').removeClass('hide');
 		        window.parent.$.LaravelMedia.closedModal(_this.uploadedData,_this.requestData);
-
 		    }),
 
 		    this.on('sending', function(file, xhr, formData){

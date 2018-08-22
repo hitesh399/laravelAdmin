@@ -143,7 +143,9 @@ Trait BulkDataQuery
 		foreach($chunk_data as $row_data){
 
 			$query = $self->insertUpdateQuery($row_data,$table_name,$update_columns);
-			$self->getConnection()->statement($query);			
+			if($query) {
+				$self->getConnection()->statement($query);			
+			}
 		}
 		
 		return $self->batchResponse($next_id,$data_count,false);
@@ -173,7 +175,10 @@ Trait BulkDataQuery
 		foreach($chunk_data as $row_data){
 
 			$query = $self->insertIgnoreQuery($row_data,$table_name);
-			$self->getConnection()->statement($query);			
+			
+			if($query) {
+				$self->getConnection()->statement($query);
+			}
 		}
 
 		return $self->batchResponse($next_id,$data_count);		
@@ -212,16 +217,19 @@ Trait BulkDataQuery
 	
 	private function batchResponse($next_id,$data_count,$for_insert=true)
 	{
-		if($next_id !==null){
 
-			$new_max_id = $this->repairPrimaryNumber();
-			$inserted = ($new_max_id-$next_id);
-			$inserted = ($inserted > $data_count)?$data_count:$inserted;
-			$ignored = ($data_count-$inserted);
-			$iu_column = ($for_insert)?'ignored':'updated';
-			return ['total'=>$data_count,$iu_column=>$ignored,'inserted'=>$inserted];
-		}
+		return ($next_id !== null ) ? $this->getInfo($next_id,$data_count,$for_insert) : true;
+	}
 
-		return true;
+	private function getInfo($next_id,$data_count,$for_insert=true) {
+
+		$new_max_id = $this->repairPrimaryNumber();
+		$inserted = ($new_max_id-$next_id);
+		$inserted = ($inserted > $data_count)?$data_count:$inserted;
+		$inserted = $inserted < 0 ? 0 : $inserted;
+
+		$ignored = ($data_count-$inserted);
+		$iu_column = ($for_insert)?'ignored':'updated';
+		return ['total'=>$data_count, $iu_column=>$ignored, 'inserted'=>$inserted];
 	}
 }

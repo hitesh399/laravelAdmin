@@ -70,8 +70,9 @@ class RoleController extends Controller
             $permissions_name = Permission::whereIn('id',$request->allow_permissions)->select('name')->pluck('name')->toArray();
         }
 
-        \Cache::forever('role_access.'.$id, $permissions_name);
 
+        \Cache::forever('role_access.'.$id, $permissions_name);
+        
         return \Response::json(['status'=>'success','message'=>'Permission has been assigned successfully.','data'=>$data]);
     }
 

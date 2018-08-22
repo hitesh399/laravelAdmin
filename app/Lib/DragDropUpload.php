@@ -31,7 +31,6 @@ class DragDropUpload  extends FilesUploader
 
 			return \Response::json(['message'=>'The store path ('.$this->store_path.') is not writable.','success'=>false],500);
 		}
-
 		//$ext = $request->file->clientExtension();
 		$path = $request->file('file')->store($this->tmp_path);
 

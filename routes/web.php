@@ -62,16 +62,16 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'],function(){
 });
 
 
-// Route::get('test2',function(){
+Route::get('test2',function(){
 
-// 	//var_dump(\Mail::send('mail.forget_password',['link'=>'google'],function($m){$m->to('hitesh@singsys.com');}));
-// 	//
-// 	$data = [];
-// 	for ($i=0; $i <50 ; $i++) { 
-// 		# code...
-// 		$data[] = factory(App\User::class)->raw();
+	//var_dump(\Mail::send('mail.forget_password',['link'=>'google'],function($m){$m->to('hitesh@singsys.com');}));
+	//
+	$data = [];
+	for ($i=0; $i <50 ; $i++) { 
+		# code...
+		$data[] = factory(App\User::class)->raw();
 
-// 	}
+	}
 
-// 	var_dump(App\User::bulkInsertIgnore($data));
-// });
+	var_dump(App\User::batchInsertIgnore($data));
+});

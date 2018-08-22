@@ -1,11 +1,11 @@
 {
-    "/assets/admin/plugins/AdminBSB/css/_bootstrap.css": "/assets/admin/plugins/AdminBSB/css/_bootstrap.css?id=136b461850189002d6c3",
-    "/assets/admin/plugins/AdminBSB/css/waves.css": "/assets/admin/plugins/AdminBSB/css/waves.css?id=b50d6ced22051bb25db6",
-    "/assets/admin/js/admin_login.base.min.js": "/assets/admin/js/admin_login.base.min.js?id=be72e4d2afae1d81a468",
-    "/assets/admin/css/admin_login.base.min.css": "/assets/admin/css/admin_login.base.min.css?id=e21401290330de10c2d7",
-    "/assets/admin/css/admin.base.min.css": "/assets/admin/css/admin.base.min.css?id=6e47c28ba9f69765e0a9",
-    "/assets/admin/js/admin.base.min.js": "/assets/admin/js/admin.base.min.js?id=7f9efc8e830b1306d9e6",
-    "/assets/admin/js/resumable.template.base.min.js": "/assets/admin/js/resumable.template.base.min.js?id=208489338a423238968b",
+    "/assets/admin/plugins/AdminBSB/css/_bootstrap.css": "/assets/admin/plugins/AdminBSB/css/_bootstrap.css?id=9e1ad44ecec493470f68",
+    "/assets/admin/plugins/AdminBSB/css/waves.css": "/assets/admin/plugins/AdminBSB/css/waves.css?id=f9c78e20c578299589ea",
+    "/assets/admin/js/admin_login.base.min.js": "/assets/admin/js/admin_login.base.min.js?id=d3faed49e65257831a18",
+    "/assets/admin/css/admin_login.base.min.css": "/assets/admin/css/admin_login.base.min.css?id=a1ae0bd2ba600f3f05f3",
+    "/assets/admin/css/admin.base.min.css": "/assets/admin/css/admin.base.min.css?id=4714328bfee34c816e70",
+    "/assets/admin/js/admin.base.min.js": "/assets/admin/js/admin.base.min.js?id=688676e4fd8eb15da372",
+    "/assets/admin/js/resumable.template.base.min.js": "/assets/admin/js/resumable.template.base.min.js?id=ed2dbf12c85e46138f6d",
     "/assets/admin/js/bootstrap-tagsinput.min.js": "/assets/admin/js/bootstrap-tagsinput.min.js?id=b0fd53fc5fbae7ce5304",
     "/assets/admin/css/bootstrap-tagsinput.css": "/assets/admin/css/bootstrap-tagsinput.css?id=01a1887ade863ef0e094",
     "/assets/admin/css/bootstrap-editable.min.css": "/assets/admin/css/bootstrap-editable.min.css?id=a9be1e4770aa3d86e78c",
@@ -13,7 +13,7 @@
     "/assets/admin/js/codemirror.min.js": "/assets/admin/js/codemirror.min.js?id=5e7d58a6a47052d42314",
     "/assets/admin/css/codemirror.min.css": "/assets/admin/css/codemirror.min.css?id=e8c58fcf217608220d75",
     "/assets/admin/css/jquery.dataTables.min.css": "/assets/admin/css/jquery.dataTables.min.css?id=aa915420c95e69d5bb60",
-    "/assets/admin/js/jquery.dataTables.min.js": "/assets/admin/js/jquery.dataTables.min.js?id=92f18af77b4ae91d6640",
-    "/assets/admin/js/file-drag-drop.base.js": "/assets/admin/js/file-drag-drop.base.js?id=46742d1f32ebe8913e8b",
-    "/assets/admin/css/file-drag-drop.base.css": "/assets/admin/css/file-drag-drop.base.css?id=274c86824d0c8558e6a7"
+    "/assets/admin/js/jquery.dataTables.min.js": "/assets/admin/js/jquery.dataTables.min.js?id=3a27d853c45300d8caa8",
+    "/assets/admin/js/file-drag-drop.base.js": "/assets/admin/js/file-drag-drop.base.js?id=53c65d2afd660449544d",
+    "/assets/admin/css/file-drag-drop.base.css": "/assets/admin/css/file-drag-drop.base.css?id=9fb7e6e3005a723168ae"
 }

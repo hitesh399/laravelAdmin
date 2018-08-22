@@ -161,14 +161,14 @@ mix.scripts([
 	'node_modules/jquery/dist/jquery.min.js',
 	'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
 	'public/assets/admin/plugins/dropzone/dropzone.js',
-	'node_modules/cropperjs/src/js/cropper.js',
+	'public/assets/admin/plugins/cropper/cropper.min.js',
 	'public/assets/admin/plugins/AdminBSB/js/waitMe.min.js'
 	],'public/assets/admin/js/file-drag-drop.base.js').version();
 
 mix.styles(
 	[
 		'public/assets/admin/plugins/AdminBSB/css/_bootstrap.css',
-		'node_modules/cropperjs/src/css/cropper.css',
+		'public/assets/admin/plugins/cropper/cropper.min.css',
 		'public/assets/admin/plugins/dropzone/dropzone.css',
 		'public/assets/admin/plugins/AdminBSB/css/waitMe.min.css'
 	],

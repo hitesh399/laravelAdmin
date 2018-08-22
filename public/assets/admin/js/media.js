@@ -43,8 +43,11 @@ $.LaravelMedia = {
 	openModal:function(_this,data,_callback){
 		
 		var popup_data = {};
-		popup_data['title'] = data.title;
-		data['element_id'] = _this.attr('id');
+		data = data === undefined ? {} : data;
+		_this  = $(_this);
+		popup_data['title'] = data && data.title ? data.title  : '';
+		data.element_id = _this.attr('id');
+		
 		
 		var element_data = jQuery.extend(true, {}, data);
 		element_data._this = _this;
@@ -105,7 +108,7 @@ $.LaravelMedia = {
 
 		var elm = _this.elms[inputName]['_this'];	
 
-		_this.elms[inputName]['callback'](data,requestData);	
+		//_this.elms[inputName]['callback'](data,requestData);	
 
 		$.each(data,function(index,file){
 
@@ -155,8 +158,12 @@ $.LaravelMedia = {
 	},
 
 	resizeIframe: function(){
+
 		var obj = document.getElementById('media-iframe');
-		obj.style.height = (obj.contentWindow.document.body.scrollHeight+20) + 'px';
+		console.log(obj.contentWindow.document.body.scrollHeight);
+		console.log('obj.contentWindow.document.body.scrollHeight');
+		var h = obj.contentWindow.document.body.scrollHeight ===0 ? 150 : obj.contentWindow.document.body.scrollHeight+20;
+		obj.style.height = (h+40) + 'px';
 	}
 }
 
